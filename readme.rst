@@ -11,60 +11,75 @@ you creatively focus on your project by minimizing the amount of code needed
 for a given task.
 
 *******************
-Release Information
+YellowPageBDCI
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+A online directory service with e commerce created using PHP Codeigniter.
+
+This is a dynamic web application. It has following features-
+
+    1.	Service categories.
+    2.	Sub category under category.
+    3.	View services using sub category.
+    4.	Search services . 
+    5.	View popular services.
+    6.	View popular companies.
+    7.	View all companies.
+    8.	User login.
+    9.	User signup.
+    10.	User logout.
+    11.	Comments under service for signed up users.
+    12.	Mail to the service provider after receiving comments.
+    13.	Start services for signed up users.
+    14.	Start company for signed up users.
+    15.	View services for service providers.
+    16.	Edit services for service providers.
+    17.	Company profile.
+    18.	Edit company profile.
+    19.	Add products under company.
+    20.	Delete products.
+    21.	Adding products to cart for shopping.
+    22.	Admin login.
+    23.	Admin logout.
+    24.	Add and manage(Edit/Delete/Publish/Unpublish) category feature for super admin.
+    25.	Add and manage(Edit/Delete/Publish/Unpublish) sub category feature for super admin.
+    26.	Add and manage(Edit/Delete/Publish/Unpublish) division for super admin.
+    27.	Add and manage(Edit/Delete/Publish/Unpublish) service for super admin.
+    28.	Manage companies(Publish/Unpublish) for super admin.
+    29.	Manage comments for super admin.
+
 
 **************************
-Changelog and New Features
+Created in PHP 5.6.3 Installation
 **************************
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+Create a folder in htdocs named "workspace". Then in workspace create another folder named "Final_year_project" and put above files. Or you can edit the .htaccess file to change directory.
 
 *******************
-Server Requirements
+Database Import
 *******************
 
-PHP version 5.4 or newer is recommended.
-
-It should work on 5.2.4 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+Create a database named "db_yellowpage' with utf8_general_ci collation. Then import the .sql fie.
 
 ************
-Installation
+Admin Login:
 ************
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+ocalhost/Final_year_project/admin_login Email: kaziabir36@gmail.com Password: 12345
 
 *******
-License
+Mail Function
 *******
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+Mail system in this project uses Google's SMTP server. To get a fully funcioning mail following things need to be changed-
 
-*********
-Resources
-*********
+    Edit "sender's email address" and "sender's password" and put your email id and email password. You will get this in "public function mail()" in "super_admin" controller.
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community IRC <https://webchat.freenode.net/?channels=%23codeigniter>`_
+    Find [mail function] in xampp/php/php.ini and change the following lines- i) SMTP=smtp.gmail.com ii) smtp_port=465 iii) sendmail_from = my-gmail-id@gmail.com //sender's email address iv) sendmail_path = ""C:\xampp\sendmail\sendmail.exe" -t"
 
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
+    Find sendmail.ini in xampp/sendmail and change the following lines-
+        smtp_server=smtp.gmail.com ii) smtp_port=587 iii) error_logfile=error.log iv) debug_logfile=debug.log v) auth_username=my-gmail-id@gmail.com //sender's email address vi) auth_password=my-gmail-password //sender's email password vii) force_sender=my-gmail-id@gmail.com //sender's email address
 
-***************
-Acknowledgement
-***************
+    If you are using SMTP server with your email for the first time you might get a mail in your Gmail to approve less secure apps.
 
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+DONE!! Now the project should work just fine. \m/
